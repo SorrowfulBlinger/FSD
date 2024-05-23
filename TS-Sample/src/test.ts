@@ -4,6 +4,18 @@ type User = {
     age?: Number
 }
 
+function Fn<T>(input:T[]) {
+    return input[1];
+}
+
+function X(input: (number[] | string[])) {
+    console.log('holy')
+}
+
+function Fn1(input:Animal) {
+    console.log(input.speak());
+}
+
 interface Animal {
     legs: Number;
     eyes: Number;
@@ -38,3 +50,4 @@ const u1:User = {
 }
 
 test(u1)
+Fn1(d);
