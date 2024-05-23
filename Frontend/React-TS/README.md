@@ -6,6 +6,6 @@
 - update tsconfig.json
 
 ## Standalone TS running
--npm install -g typescript 
+- npm install -g typescript 
 - npx tsc --init
 - tsc -b 
