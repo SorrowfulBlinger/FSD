@@ -1,6 +1,7 @@
 import { Client } from "pg";
 import express  from "express";
 import {DB_PASSWORD,  DB_USERNAME} from "./dbconfig/index"
+import { addUser, setUpPrismaDB } from "./prisma/userModel";
 
 let pgclient:Client;
 const app = express();
@@ -24,5 +25,17 @@ app.get('/test/:param',async (req,res) => {
 
 })
 
-SetupDb()
-app.listen(3000)
+app.get('/testP/:param',async (req,res) : Promise<any> => {
+    const user = await addUser({
+        name : req.params.param,
+        email: req.params.param+ '@gmail.com'
+    })
+    res.json({
+        status : 'Success',
+        userId : user.userId
+    }).status(201)
+})
+
+//SetupDb()
+setUpPrismaDB();
+app.listen(3000);
