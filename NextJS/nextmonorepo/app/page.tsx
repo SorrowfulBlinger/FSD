@@ -21,7 +21,7 @@ export default async function Home() {
   let courses:string[] = await getData();
   //let courses = ["a", "b", "c"];
   return (
-    <div className="mt-10 flex justify-center text-center shadow-md sm:rounded-lg">
+    <div className="mt-10 flex justify-center text-center sm:rounded-lg">
       <table className="w-[600px] text-sm text-center rtl:text-right text-gray-500 dark:text-gray-400">
           <caption className="p-5 text-lg font-semibold rtl:text-right text-gray-900 bg-white dark:text-white dark:bg-gray-800">
               Our Courses
