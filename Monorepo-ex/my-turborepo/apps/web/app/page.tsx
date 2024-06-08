@@ -1,11 +1,15 @@
 import { Button } from "@repo/ui/button";
 import Image from "next/image";
 import { Code } from "@repo/ui/code"
+import AsyncComp from "@repo/ui/async-comp"
+
+//"use serve
 
 export default function Home() {
   return (
     <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
       <Code></Code>
+      <AsyncComp></AsyncComp>
       <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
         <Image
           className="dark:invert"
