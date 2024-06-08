@@ -1,0 +1,36 @@
+version: '1.0'
+services: 
+  be:
+    build: ./my-backend
+    restart: always
+    container_name: beC
+    ports:
+      - 3002:3002
+    networks:
+      - mynet
+
+  fe-web:
+    build: 
+      context: ./my-turborepo
+      args:
+        BE_DOMAIN: be
+    container_name: feC
+    depends_on:
+      - be
+    ports:
+      - 3000:3000
+      - 3001:3001
+    
+    environment:
+      - DOMAIN=http://be:3002/data
+    volumes:
+      - ./:/app
+    networks:
+      - mynet
+  
+
+
+networks:
+  mynet:
+
+  

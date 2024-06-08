@@ -1,0 +1,14 @@
+version: '1.0'
+services: 
+  fe-web:
+    build: .
+    container_name: feC
+    ports:
+      - 3000:3000
+      - 3001:3001
+    environment:
+      - DOMAIN=localhost
+    volumes:
+      - ./:/app
+  
+  
